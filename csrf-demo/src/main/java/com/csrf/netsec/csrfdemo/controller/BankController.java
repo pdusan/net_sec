@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.csrf.netsec.csrfdemo.models.Customer;
 
 @Controller
@@ -20,8 +22,13 @@ public class BankController {
 	}
     
     @PostMapping("/account/transfer")
-    public String transfer() {
-    	a.removeMoney(100);
+    public String transfer(@RequestParam(value="amount") int amount) {
+    	a.removeMoney(amount);
         return "success";
+    }
+    
+    @RequestMapping("/safe")
+    public String safe() {
+    	return "not_an_attack";
     }
 }
