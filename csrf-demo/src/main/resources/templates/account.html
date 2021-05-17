@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Actual Application</title>
+    <title>Bank Application</title>
 </head>
 <body>
+	<p th:text="'Available balance: ' + '$' + ${balance}" />
     <form action="/account/transfer" method="post">
-        <input type="submit" value="Transfer Money">
+        <input type="submit" value="Transfer $100"/>
     </form>
 </body>
 </html>
