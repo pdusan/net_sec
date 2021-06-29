@@ -8,6 +8,11 @@ public class Customer {
 		this.balance = 1000;
 		this.name = "John";
 	}
+	
+	public Customer(String name, int balance) {
+		this.name = name;
+		this.balance = balance;
+	}
 
 	public int getBalance() {
 		return this.balance;

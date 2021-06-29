@@ -5,9 +5,33 @@
     <title>Bank Application</title>
 </head>
 <body>
-	<p th:text="'Available balance: ' + '$' + ${balance}" />
-    <form action="/account/transfer" method="post">
-        <button name="amount" value="100">Transfer $100</button>
+	<p th:text="'Greetings ' + ${name} + '. Available balance: $' + ${balance}" />
+    <form action = "account/transfer" method = "GET">
+    	<input type = "hidden" name = "person" value = "Alice">
+    	<input type = "hidden" name = "amount" value = "100">
+    	
+    	<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
+    	
+    	<button>Transfer $100 to Alice</button>
+    </form>
+    
+    <form action = "account/transfer" method = "POST">
+    	<label> Recipient  </label>
+    	<input name = "person" type="text" />
+    	
+    	<label>Amount</label>
+    	<input name="amount" type="number" />
+    	
+    	<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
+    	
+    	<input type="submit">
+    </form>
+    
+    <form action="/">
+    
+   		<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
+   		
+        <button name="back">Home</button>
     </form>
 </body>
 </html>

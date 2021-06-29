@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Bank Application</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="/account" method="post">
+<div class = "wrapper">
+    <form action="/account" >
+    	<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
         <input type="submit" value="To My Account"/>
     </form>
     
-     <form action="/users" method="post">
+     <form action="/users" >
+     	<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
         <input type="submit" value="Show all users"/>
     </form>
+</div>
 </body>
 </html>
