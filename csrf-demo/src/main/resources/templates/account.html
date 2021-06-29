@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Bank Application</title>
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="wrapper">
+	<div class="header">
+		PrettySecure Bank
+	</div>
+	<div class="content">
 	<p th:text="'Greetings ' + ${name} + '. Available balance: $' + ${balance}" />
+	Favourites
     <form action = "account/transfer" method = "GET">
     	<input type = "hidden" name = "person" value = "Alice">
     	<input type = "hidden" name = "amount" value = "100">
     	
     	<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
     	
-    	<button>Transfer $100 to Alice</button>
+    	<button class="button">Transfer $100 to Alice</button>
     </form>
-    
-    <form action = "account/transfer" method = "POST">
+    <form action = "account/transfer" method = "POST" style="padding: 20px">
+    Transfer Funds: <br> 
     	<label> Recipient  </label>
     	<input name = "person" type="text" />
     	
@@ -24,14 +31,16 @@
     	
     	<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
     	
-    	<input type="submit">
+    	<input type="submit" class="button">
     </form>
     
     <form action="/">
     
    		<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
    		
-        <button name="back">Home</button>
+        <button name="back" class="button">Home</button>
     </form>
+    </div>
+</div>
 </body>
 </html>

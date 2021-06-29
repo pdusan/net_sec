@@ -7,15 +7,22 @@
 </head>
 <body>
 <div class = "wrapper">
+	<div class="header">
+		PrettySecure Bank
+	</div>
+	<div class="content">
+	<div style="margin-top: 8%">
     <form action="/account" >
     	<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
-        <input type="submit" value="To My Account"/>
+        <input type="submit" value="To My Account" class="button"/>
     </form>
     
-     <form action="/users" >
+     <form action="/users" style="margin-top: 3%">
      	<input type = "hidden" name = "${_csrf.parameterName}" value = "${_csrf.token}"/>
-        <input type="submit" value="Show all users"/>
+        <input type="submit" value="Show all users" class="button"/>
     </form>
+    </div>
+    </div>
 </div>
 </body>
 </html>
